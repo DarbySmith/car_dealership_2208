@@ -39,4 +39,9 @@ class Dealership
       "address" => @address
     }
   end
+
+  # def average_price_of_car
+  #   require 'pry'; binding.pry
+  #   (total_value.to_f / @inventory_count).to_s
+  # end
 end

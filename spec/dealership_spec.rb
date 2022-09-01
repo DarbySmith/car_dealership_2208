@@ -98,4 +98,15 @@ RSpec.describe Dealership do
       expect(@dealership.details).to eq(dealership_details)
     end
   end
+
+  describe '#average_price_of_car' do 
+    xit 'shows the average price of cars at the dealership' do 
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+
+      expect(@dealership.average_price_of_car).to eq("39,000")
+    end
+  end
 end

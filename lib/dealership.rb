@@ -32,4 +32,11 @@ class Dealership
       car.total_cost
     end
   end
+
+  def details
+    dealership_details = {
+      "total_value" => total_value, 
+      "address" => @address
+    }
+  end
 end

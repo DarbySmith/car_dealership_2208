@@ -85,8 +85,17 @@ RSpec.describe Dealership do
   end
 
   describe '#details' do
-    xit 'shows all the details of the dealership' do
+    xit 'shows the total value and address of the dealership' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+      dealership_details = {
+        "total_value" => 156000, 
+        "address" => "123 Main Street"
+      }
 
+      expect(@dealership.details).to eq(dealership_details)
     end
   end
 end

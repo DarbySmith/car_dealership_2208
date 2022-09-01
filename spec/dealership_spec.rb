@@ -85,7 +85,7 @@ RSpec.describe Dealership do
   end
 
   describe '#details' do
-    xit 'shows the total value and address of the dealership' do
+    it 'shows the total value and address of the dealership' do
       @dealership.add_car(@car_1)
       @dealership.add_car(@car_2)
       @dealership.add_car(@car_3)

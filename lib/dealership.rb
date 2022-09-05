@@ -45,4 +45,10 @@ class Dealership
     reverse_arr = average_price.to_s.chars.reverse
     reverse_arr.each_slice(3).map(&:join).join(",").reverse
   end
+
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.monthly_payment * car.loan_length
+    end
+  end
 end

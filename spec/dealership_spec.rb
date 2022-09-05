@@ -120,4 +120,20 @@ RSpec.describe Dealership do
       expect(@dealership.cars_sorted_by_price).to eq([@car_3, @car_4, @car_2, @car_1])
     end
   end
+
+  describe '#inventory_hash' do
+    it 'returns a hash with cars sorted by make' do
+      @dealership.add_car(@car_1)
+      @dealership.add_car(@car_2)
+      @dealership.add_car(@car_3)
+      @dealership.add_car(@car_4)
+    inv_hash = {
+      "Ford" => [@car_1], 
+      "Toyota" => [@car_2, @car_3],
+      "Chevrolet" => [@car_4]
+    }
+
+    expect(@dealership.inventory_hash).to eq(inv_hash)
+    end
+  end
 end

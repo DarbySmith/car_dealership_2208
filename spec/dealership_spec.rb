@@ -100,7 +100,7 @@ RSpec.describe Dealership do
   end
 
   describe '#average_price_of_car' do 
-    xit 'shows the average price of cars at the dealership' do 
+    it 'shows the average price of cars at the dealership' do 
       @dealership.add_car(@car_1)
       @dealership.add_car(@car_2)
       @dealership.add_car(@car_3)

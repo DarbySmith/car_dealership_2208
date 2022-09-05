@@ -51,4 +51,23 @@ class Dealership
       car.monthly_payment * car.loan_length
     end
   end
+
+  def inventory_hash
+    inventory = {
+      "Ford" => [],
+      "Toyota" => [],
+      "Chevrolet" => []
+    }
+
+    @inventory.each do |car|
+      if car.make == "Ford"
+        inventory["Ford"] << car
+      elsif car.make == "Toyota"
+        inventory["Toyota"] << car
+      elsif car.make == "Chevrolet"
+        inventory["Chevrolet"] << car
+      end
+    end
+  inventory
+  end
 end

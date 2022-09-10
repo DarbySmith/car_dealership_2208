@@ -40,8 +40,34 @@ class Dealership
     }
   end
 
-  # def average_price_of_car
-  #   require 'pry'; binding.pry
-  #   (total_value.to_f / @inventory_count).to_s
-  # end
+  def average_price_of_car
+    average_price = (total_value / @inventory_count)
+    reverse_arr = average_price.to_s.chars.reverse
+    reverse_arr.each_slice(3).map(&:join).join(",").reverse
+  end
+
+  def cars_sorted_by_price
+    @inventory.sort_by do |car|
+      car.monthly_payment * car.loan_length
+    end
+  end
+
+  def inventory_hash
+    inventory = {
+      "Ford" => [],
+      "Toyota" => [],
+      "Chevrolet" => []
+    }
+
+    @inventory.each do |car|
+      if car.make == "Ford"
+        inventory["Ford"] << car
+      elsif car.make == "Toyota"
+        inventory["Toyota"] << car
+      elsif car.make == "Chevrolet"
+        inventory["Chevrolet"] << car
+      end
+    end
+  inventory
+  end
 end

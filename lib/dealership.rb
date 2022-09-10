@@ -22,7 +22,7 @@ class Dealership
   end
 
   def cars_by_make(make)
-    make_of_car = inventory.find_all do |car|
+    @inventory.find_all do |car|
       car.make == make
     end
   end
@@ -41,14 +41,18 @@ class Dealership
   end
 
   def average_price_of_car
+    # average_price = (total_value / @inventory_count)
+    # reverse_arr = average_price.to_s.chars.reverse
+    # reverse_arr.each_slice(3).map(&:join).join(",").reverse
+
     average_price = (total_value / @inventory_count)
-    reverse_arr = average_price.to_s.chars.reverse
-    reverse_arr.each_slice(3).map(&:join).join(",").reverse
+    average_price.to_s.insert(2, ",")
   end
 
   def cars_sorted_by_price
     @inventory.sort_by do |car|
-      car.monthly_payment * car.loan_length
+      # car.monthly_payment * car.loan_length
+      car.total_cost
     end
   end
 
